@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS CLosure</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="heading">JS CLOSURE</h1>
+    <div class="one">
+      <span>(Q1)</span>
+      <div class="Q">
+        <h2>
+          function counter(){ <br />
+          var counter = 0; <br /><br />
+
+          function IncreaseCounter() { <br />
+          return counter += 1; <br />
+          }; <br /><br />
+
+          return IncreaseCounter; <br />
+          } <br />
+          <br />
+
+          var counter = counter(); <br />
+          alert(counter()); <br />
+          alert(counter()); <br />
+          alert(counter()); <br />
+          alert(counter());
+        </h2>
+        <p>
+          1 <br />
+          2 <br />3 <br />
+          4
+        </p>
+      </div>
+    </div>
+    <div class="two">
+      <span>(Q2)</span>
+      <div class="Q">
+        <h2>
+          let count = 0; <br />
+          (function () { <br />
+          if (count === 0) { <br />
+          let count = 1;<br />
+          console.log(count); // What is logged? <br />
+          } <br />
+          console.log(count); // What is logged? <br />
+          })();
+        </h2>
+        <p>
+          1 <br />
+          0
+        </p>
+      </div>
+    </div>
+    <div class="three">
+      <span>(Q3)</span>
+      <div class="Q">
+        <h2>
+          for (var i = 0; i < 3; i++) { <br />
+          setTimeout(function log() { <br />
+          console.log(i); // What is logged? <br />
+          }, 1000); <br />
+          }
+        </h2>
+        <p>3 <br />3 <br />3</p>
+      </div>
+    </div>
+    <div class="four">
+      <span>(Q4)</span>
+      <div class="Q">
+        <h2>
+          Write a code to calculate area of a rectangle using inner function. In
+          this case outer function should accept parameter length and inner
+          function should accept parameter breadth.
+        </h2>
+        <p>
+          function outer(l){ <br />
+          function inner(b){ <br />
+          return l*b <br />
+          } <br />
+          return inner <br />
+          } <br />
+          var a=outer(5); <br />
+          console.log(a(4)) <br />
+        </p>
+      </div>
+    </div>
+    <div class="five">
+      <span>(Q5)</span>
+      <div class="Q">
+        <h2>
+          Take a variable in outer function and create an inner function to
+          increase the counter every time it is called
+        </h2>
+        <p>
+          function outer(){ <br />
+          var counter = 0; <br /><br />
+
+          function inner() { <br />
+          return counter += 1; <br />
+          };<br /><br />
+
+          return inner;<br />
+          } <br /><br />
+
+          var counter = outer(); <br />
+          alert(counter()); <br />
+          alert(counter());b <br />
+          alert(counter()); <br />
+          alert(counter());
+        </p>
+      </div>
+    </div>
+    <div class="six">
+      <span>(Q6)</span>
+      <div class="Q">
+        <h2>
+          "Print Output <br /><br />
+
+          var a = 12; <br />
+          (function () { <br />
+          alert(a); <br />
+          })();"
+        </h2>
+        <p>12</p>
+      </div>
+    </div>
+    <div class="seven">
+      <span>(Q7)</span>
+      <div class="Q">
+        <h2>
+          "var a = 10; <br />
+          var x = (function () { <br />
+          var a = 12; <br />
+          return function () { <br />
+          alert(a); <br />
+          }; <br />
+          })(); <br />
+          x();"
+        </h2>
+        <p>12</p>
+      </div>
+    </div>
+    <div class="eight">
+      <span>(Q8)</span>
+      <div class="Q">
+        <h2>
+          var globalVar = ""xyz""; <br /><br />
+
+          (function outerFunc(outerArg) { <br />
+          var outerVar = 'a'; <br /><br />
+
+          (function innerFunc(innerArg) { <br />
+          var innerVar = 'b';<br /><br />
+
+          console.log( ""outerArg = "" + outerArg + ""\n"" + ""innerArg = "" +
+          innerArg + ""\n"" + ""outerVar = "" + outerVar + ""\n"" + ""innerVar =
+          "" + innerVar + ""\n"" + ""globalVar = "" + globalVar); })(456);<br />
+          })(123);
+        </h2>
+        <p>
+          outerArg = 123 <br />
+          innerArg = 456 <br />
+          outerVar = a <br />
+          innerVar = b <br />
+          globalVar = xyz
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
